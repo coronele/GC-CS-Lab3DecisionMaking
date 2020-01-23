@@ -8,27 +8,6 @@ namespace Lab_3___Decision_Making
         {
             int userInput;
             string userName, userContinue="y";
-            
-            static bool IsOdd(int x)
-            /* 
-            
-            IsOdd - method that takes an integer (x) and uses mod to see if the number is divided
-            evenly by 2 (or is even).
-
-            Returns false if integer mod 2 is 0 (even)
-            Returns true if integer mod 2 is 1 (odd)
-
-            */
-            {
-                if (x % 2 == 0)
-                {
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
-            }
 
             // Tell user what this is
             Console.ForegroundColor = ConsoleColor.Cyan;
@@ -118,6 +97,27 @@ namespace Lab_3___Decision_Making
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.BackgroundColor = ConsoleColor.DarkRed;
             Console.WriteLine($"Thank you {userName}, See you again soon!");
+        }
+
+        /*******************************
+
+        IsOdd - method that takes an integer (x) and uses mod to see if the number is divided
+        evenly by 2 (or is even).
+
+        Returns false if integer mod 2 is 0 (even)
+        Returns true if integer mod 2 is 1 (odd)
+
+        ********************************/
+        public static bool IsOdd(int x)
+        {
+            if (x % 2 == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }
