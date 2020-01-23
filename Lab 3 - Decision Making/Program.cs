@@ -47,10 +47,20 @@ namespace Lab_3___Decision_Making
             {
                 // Use provided name.  It's good customer service!  Now politely ask them for their number.
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.Write($"\n\nHello {userName}! Please enter an integer to evaluate: ");
+                Console.Write($"\n\nHello {userName}! Please enter an integer between 1 and 100 to evaluate: \n");
             
                 Console.ForegroundColor = ConsoleColor.DarkGray;
                 userInput = int.Parse(Console.ReadLine());
+
+                while ((userInput < 1) || (userInput > 100))
+                {
+                    // check for invalid integer values
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write($"Value must be between 1 and 100. Please try again: ");
+
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                    userInput = int.Parse(Console.ReadLine());
+                }
 
                 Console.ForegroundColor = ConsoleColor.White;
 
@@ -91,7 +101,7 @@ namespace Lab_3___Decision_Making
                 Console.BackgroundColor = ConsoleColor.Black;
                 userContinue = Console.ReadLine().ToLower();
                 
-                // Mildly inform user of his "user error"
+                // Mildly inform user of their "user error"
                 while ((userContinue!="y") && (userContinue!="n"))
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
